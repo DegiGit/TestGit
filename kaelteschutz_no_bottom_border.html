@@ -1,0 +1,252 @@
+<section class="maislinger-brandschutz-grid-wrapper">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #003d77;
+            --primary-dark: #002a52;
+            --accent: #37ebaa;
+            --light: #ffffff;
+            --text-faded: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.22);
+            --glow: rgba(55, 235, 170, 0.35);
+        }
+
+        .maislinger-brandschutz-grid-wrapper * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .maislinger-brandschutz-grid-wrapper {
+            background-color: #ffffff;
+        }
+
+        .section-shell {
+            padding: 40px 1rem 90px 1rem;
+            background: #ffffff;
+            isolation: isolate;
+        }
+
+        .content-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        @media (min-width: 768px) {
+            .hero-section {
+                grid-template-columns: 1fr 400px;
+            }
+        }
+
+        /* Button */
+        .hero-cta {
+            color: var(--primary-dark) !important;
+            outline: none;
+            transition: color 0.2s, background-color 0.2s;
+        }
+        .hero-cta:hover { color: var(--light) !important; }
+        .hero-cta:active,
+        .hero-cta:focus {
+            color: var(--light) !important;
+            background-color: #27c897 !important;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            border-radius: 18px;
+            padding: 32px 28px;
+            position: relative;
+            box-shadow: 0 18px 35px var(--shadow);
+            transform-style: preserve-3d;
+            --rotateX: 0deg;
+            --rotateY: 0deg;
+            transform: perspective(1000px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s ease;
+            cursor: pointer;
+            will-change: transform, box-shadow;
+            overflow: hidden;
+        }
+
+        .card.is-hovering { z-index: 10; }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.1), transparent 45%);
+            mix-blend-mode: screen;
+            opacity: 0.6;
+            pointer-events: none;
+            transform: translateX(-40%);
+        }
+
+        .card:hover {
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32), 0 0 20px var(--glow);
+            transform: perspective(1000px) translateY(-5px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+        }
+
+        .badge {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--light);
+            font-weight: 700;
+        }
+
+        .card p {
+            margin: 10px 0 0;
+            color: var(--text-faded);
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .text-mais-accent { color: var(--accent); }
+        .bg-mais-accent { background-color: var(--accent); }
+
+        /* Bild ohne unteren Rand darstellen */
+        .hero-image {
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 61, 119, 0.2);
+        }
+
+        .hero-image img {
+            display: block; /* verhindert den typischen Inline-Block-Rand unter dem Bild */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+    <section class="section-shell" id="maislingerSection">
+        <div class="content-wrap">
+            <div class="hero-section">
+                <div>
+                    <h1 class="text-4xl font-extrabold text-gray-800 mb-4 md:text-5xl">
+                        <span class="text-mais-accent">Kälteschutz</span>: Optimierung und Effizienz
+                    </h1>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Die Maislinger Isoliertechnik GmbH ist Ihr Spezialist für <strong>effektiven Kälteschutz</strong> in industriellen Anlagen. Wir bieten Dämmungslösungen, die Energieverluste minimieren und die Betriebssicherheit komplexer Kälteanlagen maximieren.
+                    </p>
+                    <p class="text-gray-500 mb-8">
+                        Unsere hochwertigen Isoliersysteme verhindern zuverlässig Kondensation und Korrosion und garantieren somit die Langlebigkeit Ihrer Anlagen. <strong>Maximale Effizienz – gesichert durch Maislinger.</strong>
+                    </p>
+                    <a href="https://www.maislinger-isoliertechnik.at/kontakt/" class="hero-cta inline-block text-center bg-mais-accent font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300 shadow-xl" style="box-shadow: 0 10px 20px rgba(55, 235, 170, 0.4);">
+                        Jetzt Beratung anfordern
+                    </a>
+                </div>
+
+                <!-- Bild ohne sichtbaren unteren Rand -->
+                <div class="hero-image hidden md:block">
+                    <img src="https://www.maislinger-isoliertechnik.at/wp-content/uploads/2025/09/kaelteschutz.01.webp"
+                         alt="Effektive Kälteschutzmaßnahmen in Industrieanlagen">
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center pt-8 border-t border-gray-200">Für die Anforderungen der unterschiedlichen Dämmungen bieten wir passgenaue Lösungen.
+                Unsere Leistungen!</h2>
+
+            <div class="grid" id="gridCards"></div>
+        </div>
+    </section>
+
+    <script>
+        const data = [
+            { number: 1, title: 'Rohrisolierung / Thermische Anlagen', description: 'Wärme-, Kälte-, Schall- und Brandschutz für Industrie- und Anlagenbau.' },
+            { number: 2, title: 'Behälterisolierung', description: 'Spezielle Isoliersysteme für Kältespeicher und Großtanks, um eine konstante Temperatur und Betriebssicherheit zu gewährleisten.' },
+            { number: 3, title: 'Filteranlagen, Filterhaus, Trichter,', description: 'Rauchgasanlage, Trockner, Ecomizer, Saugzüge.' },
+            { number: 4, title: 'Wärmeschutz', description: 'Präventive Maßnahmen gegen das Einfrieren kritischer Leitungen in nicht beheizten Außenbereichen und kühleren Hallen.' },
+            { number: 5, title: 'Kälteschutz', description: 'Klimatechnik, Kältespeicher, Prozesskälte.' },
+            { number: 6, title: 'Schallschutz', description: 'Rohre, Kanäle, Behälter, Apparate, Geräte, Raumakustik, Gebäude.' },
+            { number: 7, title: 'Brandschutz', description: 'Durchführungen, Abschottungen, Bekleidungen, selbstständige Lüftungs- und Entrauchungskanäle.' },
+        ];
+
+        const MAX_TILT = 7;
+
+        function addTiltEffect(card) {
+            let isHovering = false;
+
+            card.addEventListener('mouseenter', () => {
+                isHovering = true;
+                card.classList.add('is-hovering');
+            });
+
+            card.addEventListener('mousemove', (e) => {
+                if (!isHovering) return;
+
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - (rect.width / 2);
+                const y = e.clientY - rect.top - (rect.height / 2);
+                const normalizedX = x / (rect.width / 2);
+                const normalizedY = y / (rect.height / 2);
+                const rotateY = MAX_TILT * normalizedX;
+                const rotateX = -MAX_TILT * normalizedY;
+
+                requestAnimationFrame(() => {
+                    card.style.setProperty('--rotateX', `${rotateX}deg`);
+                    card.style.setProperty('--rotateY', `${rotateY}deg`);
+                    const colorPrimaryHex = '#003d77';
+                    card.style.boxShadow = `0 24px 60px rgba(0, 0, 0, 0.32), ${-rotateY * 0.5}px ${rotateX * 0.5}px 20px ${colorPrimaryHex}40`;
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                isHovering = false;
+                card.classList.remove('is-hovering');
+                card.style.setProperty('--rotateX', '0deg');
+                card.style.setProperty('--rotateY', '0deg');
+                card.style.boxShadow = '0 18px 35px var(--shadow)';
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardsContainer = document.getElementById('gridCards');
+            if (!cardsContainer) return;
+
+            data.forEach((item) => {
+                const card = document.createElement('article');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="card-header flex items-center gap-4 mb-4">
+                        <div class="badge">${item.number}</div>
+                        <h3>${item.title}</h3>
+                    </div>
+                    <p>${item.description}</p>
+                `;
+
+                cardsContainer.appendChild(card);
+                addTiltEffect(card);
+            });
+        });
+    </script>
+</section>
